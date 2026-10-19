@@ -34,7 +34,7 @@ Use `--seed` to set the training seed. Clustering uses a fixed initialization se
 
 ## Evaluation metrics
 
-Inputs use data range 1. Metrics are computed per image and averaged across images. Prediction clipping is controlled by `--clip` and recorded in the output.
+Inputs use data range 1. Metrics are computed per image and averaged across images. Prediction clipping is controlled by `--clip` and recorded in the output. ERGAS uses the configured spatial scale (×2, ×4, or ×8). Evaluation rejects targets or recorded source scenes that overlap training or validation data.
 
 | Metric | Definition |
 |---|---|

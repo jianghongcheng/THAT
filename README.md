@@ -137,12 +137,11 @@ Pretrained checkpoints are not currently released.
 
 ```bash
 that-evaluate --checkpoint runs/botswana_x4.pt \
-  --data data/test --output runs/botswana_x4_test.json
+  --data data/test \
+  --output runs/botswana_x4_test.json
 ```
 
-Evaluation reports **PSNR, SSIM, SAM, ERGAS, and SCC** for each image and their image-level means. The actual spatial scale is used for ERGAS. Predictions are evaluated without clipping by default; add `--clip` to clamp them to [0, 1]. Targets or recorded source scenes shared with training or validation are rejected.
-
-See [metric definitions](docs/reproducibility.md#evaluation-metrics) for evaluation conventions.
+Reports per-image **PSNR, SSIM, SAM, ERGAS, and SCC**, together with their averages across test images. Use `--clip` to clamp predictions to [0, 1] before evaluation. See the [metric definitions](docs/reproducibility.md#evaluation-metrics) for details.
 
 ## Development
 
