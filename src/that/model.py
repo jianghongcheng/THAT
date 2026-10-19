@@ -1,5 +1,5 @@
-"""THAT implementation following the supplied paper figures and equations.
-Unspecified choices are recorded in docs/reproducibility.md, not claimed as published facts.
+"""THAT: Token-wise High-frequency Augmentation Transformer
+for Hyperspectral Pansharpening.
 """
 
 import torch
