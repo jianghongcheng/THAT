@@ -1,0 +1,55 @@
+{
+  "paper_doi": "10.1109/SMC58881.2025.11343459",
+  "provenance": "Rendered from supplied paper figure PDFs; not newly computed benchmark results.",
+  "conversion": "pdftoppm -singlefile -scale-to <longest-edge-pixels> -png",
+  "figures": [
+    {
+      "image": "architecture.png",
+      "source_pdf": "PTST.pdf",
+      "source_pdf_sha256": "da4f8da1b1cfcdb7ba289bc4d47e1aeff86ef1481f230ff777bde904f900c07d",
+      "image_sha256": "cff3d39cb8912378cfb269935c41b0885a932a6e6a7f9e09b8273ea152ae8ed7"
+    },
+    {
+      "image": "feature-visualization.png",
+      "source_pdf": "comparison.pdf",
+      "source_pdf_sha256": "d0a77f91bae7ff95f1c6c9065915f0e7ffe23602b924994d10c02885f3d655d0",
+      "image_sha256": "df77880b832e2bc193572fe5d2c7dabc494e69c27d2424421cb6faa7cf6ea6bb"
+    },
+    {
+      "image": "token-selection.png",
+      "source_pdf": "example.pdf",
+      "source_pdf_sha256": "04e722ecfa6dbc87282dfd6fb1926d6aa31f63ce03b2befd13293899e42c245e",
+      "image_sha256": "551fc1fd4833a455801dcaf01b98b642ea1f83ab0a0bdaa4cd535f6be540486d"
+    },
+    {
+      "image": "mvfn.png",
+      "source_pdf": "MVFN.pdf",
+      "source_pdf_sha256": "57edbe68f88d0314cb88b9f9829095f0333049a9f15539e8a0329e110bd63d78",
+      "image_sha256": "2e6d5de116c5a2ff31e20cd457f147e1a8d61b89b7ae00f723c8ef66987d686d"
+    },
+    {
+      "image": "botswana-x2-comparison.png",
+      "source_pdf": "result.pdf",
+      "source_pdf_sha256": "3d83e1146316e7c9a4b453dbd390e6680095a11ffc5a091a0f535f2125d3aea4",
+      "image_sha256": "ae3cf156bf20aa563babb1702e6a095049b3753b37a983d699f5f6f3f62f41bc"
+    },
+    {
+      "image": "botswana-x2-band-psnr.png",
+      "source_pdf": "Botswana_2_20_psnr.pdf",
+      "source_pdf_sha256": "366bd8c12132ec4e11d764445552af9ac466b8be35c96fedf6dfa54afbf3f5f1",
+      "image_sha256": "6a96d7c5a9e574625e7f9012fc8c4a5ee81450a81f8daf58266874be34754aa4"
+    },
+    {
+      "image": "paviac-x2-band-psnr.png",
+      "source_pdf": "PaviaC_2_20_psnr.pdf",
+      "source_pdf_sha256": "886d8c3a6d2a774bc592b267e5faf4b3337495a2e71aebb048c86d973f13c125",
+      "image_sha256": "e7e229991d816c8e404036240a0ffd98fca8ac81a68148ad0ff9df0e551286c7"
+    },
+    {
+      "image": "paviau-x2-band-psnr.png",
+      "source_pdf": "PaviaU_2_20_psnr.pdf",
+      "source_pdf_sha256": "4b2554444d35aacf4bbb85200f79ed1ecc1700ca78ab4f94f9818e0badc1c316",
+      "image_sha256": "ee3fecb71d5430fefd344bcd45a5439bec2fea980ea2a93a2b9dab05b0096dca"
+    }
+  ]
+}

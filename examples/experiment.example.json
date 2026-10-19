@@ -1,0 +1,27 @@
+{
+  "description": "Example experiment record; CLI commands are documented in README.md.",
+  "model": {
+    "in_ch": 145,
+    "factor": 4,
+    "embed_dim": 180,
+    "num_heads": 6,
+    "num_groups": 3
+  },
+  "training": {
+    "epochs": 50,
+    "batch_size": 2,
+    "learning_rate": 0.0005,
+    "weight_decay": 0,
+    "lr_step": 20,
+    "lr_gamma": 0.5,
+    "seed": 0
+  },
+  "data": {
+    "train": "data/train",
+    "validation": "data/val",
+    "test": "data/test",
+    "crop_size": 256,
+    "gaussian_sigma": null,
+    "visible_band_indices": null
+  }
+}

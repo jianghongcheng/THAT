@@ -1,0 +1,29 @@
+# Python and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Data, checkpoints, and generated experiment artifacts
+/data/
+/runs/
+/checkpoints/
+*.mat
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+# Local editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+THAT implementation provenance
+
+Paper: THAT: Token-wise High-frequency Augmentation Transformer for Hyperspectral
+Pansharpening, IEEE SMC 2025. DOI: 10.1109/SMC58881.2025.11343459.
+
+The model was reorganized from an existing local research implementation. Its
+attention code explicitly credits DRSformer:
+https://github.com/cschenxiang/DRSformer
+The window-attention implementation was inherited through a HAT/TTST-derived
+local backbone. These origins are acknowledged; no claim of independent
+creation or blanket relicensing of third-party code is made here.
+
+A repository-wide license has not been selected. This notice is attribution,
+not a license grant. Dataset redistribution and pretrained weights are not
+included in this repository.
