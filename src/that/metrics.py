@@ -1,4 +1,4 @@
-"""Reduced-resolution metrics. Explicit conventions: see docs/reproducibility.md."""
+"""Reduced-resolution hyperspectral image quality metrics."""
 
 import numpy as np
 from scipy.ndimage import convolve
@@ -41,7 +41,7 @@ def metrics(prediction, reference, factor):
     ratios = np.divide(band_mse, means**2, out=np.zeros_like(means), where=means != 0)
     ratios[(means == 0) & (band_mse > 0)] = np.inf
     ergas = 100 / factor * np.sqrt(ratios.mean())
-    # SCC convention inherited from local source: bandwise Pearson correlation.
+    # SCC: mean bandwise Pearson correlation.
     pc, gc = p - p.mean((0, 1)), g - g.mean((0, 1))
     den = np.sqrt((pc**2).sum((0, 1)) * (gc**2).sum((0, 1)))
     good = den > 0

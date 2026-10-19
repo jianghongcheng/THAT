@@ -1,5 +1,5 @@
 {
-  "description": "Example experiment record; CLI commands are documented in README.md.",
+  "description": "Experiment metadata template.",
   "model": {
     "in_ch": 145,
     "factor": 4,

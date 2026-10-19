@@ -45,9 +45,15 @@ def kmeans_attn(scores):
 
 
 class PTSA(nn.Module):
-    """Pivotal Token Selective Attention (PTSA)
-    Tips:
-        Mainly borrows from DRSFormer (https://github.com/cschenxiang/DRSformer)
+    """Pivotal Token Selective Attention over channel-feature tokens.
+
+    Args:
+        dim: Number of feature channels.
+        num_heads: Number of attention heads.
+        bias: Whether to use convolution biases.
+
+    Input and output tensors have shape ``(batch, channels, height, width)``.
+    Convolutional QKV projection follows DRSformer; see NOTICE for attribution.
     """
 
     def __init__(self, dim, num_heads, bias):
@@ -264,7 +270,7 @@ class WindowAttention(nn.Module):
             qkv[0],
             qkv[1],
             qkv[2],
-        )  # make torchscript happy (cannot use tensor as tuple)
+        )
 
         q = q * self.scale
         attn = q @ k.transpose(-2, -1)
@@ -298,6 +304,8 @@ class WindowAttention(nn.Module):
 
 
 class WindowSelfAttention(nn.Module):
+    """Window-based self-attention with relative position bias."""
+
     def __init__(self, dim, heads=6, window_size=8):
         super().__init__()
         self.window_size = window_size
@@ -329,10 +337,7 @@ class WindowSelfAttention(nn.Module):
 
 
 class PTSG(nn.Module):
-    """Figure 3: LayerNorm -> parallel PTSA/WSA -> MVFN -> residual addition.
-
-    Additive branch fusion is an explicit interpretation of the unspecified merge.
-    """
+    """Pivotal Token Selective Group with parallel attention and MVFN fusion."""
 
     def __init__(self, dim=180, heads=6, window_size=8):
         super().__init__()
@@ -347,6 +352,8 @@ class PTSG(nn.Module):
 
 
 class THATBackbone(nn.Module):
+    """Feature projection, stacked PTSG modules, and reconstruction head."""
+
     def __init__(
         self, in_chans=65, embed_dim=180, num_groups=3, num_heads=6, window_size=8
     ):
@@ -373,6 +380,16 @@ class THATBackbone(nn.Module):
 
 
 class THAT(nn.Module):
+    """Hyperspectral pansharpening from low-resolution HSI and high-resolution PAN.
+
+    Args:
+        in_ch: Number of hyperspectral bands.
+        factor: Spatial resolution ratio (2, 4, or 8).
+        **backbone_kwargs: Options forwarded to :class:`THATBackbone`.
+
+    The forward method returns an HSI at the panchromatic image resolution.
+    """
+
     def __init__(self, in_ch, factor, **backbone_kwargs):
         super().__init__()
         if in_ch < 1 or factor not in (2, 4, 8):

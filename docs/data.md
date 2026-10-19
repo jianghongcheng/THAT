@@ -8,7 +8,7 @@ The default workflow normalizes the whole cube with one global min/max and extra
 
 Required experiment choices:
 
-- `--sigma`: positive Gaussian standard deviation; no value is supplied by the paper.
+- `--sigma`: positive Gaussian standard deviation for the degradation kernel.
 - `--visible-bands`: comma-separated, zero-based indices derived from the sensor wavelengths and preprocessing.
 
 Optional processing controls are `--phase` (decimation offset, default 0) and `--crop-size` (default 256). Kernel boundaries use reflection. Processing settings and the source-file SHA-256 hash are saved beside the MAT file as JSON.
@@ -29,9 +29,9 @@ All arrays must be finite and in [0, 1]. The band counts must match, H/h and W/w
 
 Use independent scenes for training, validation, and testing. Keep the generated JSON files next to their MAT files. Training and evaluation reject identical targets or shared source hashes across development/test boundaries. If data are prepared externally, identical targets are still detected, but source-scene provenance cannot be inferred from arbitrary crops; the experimenter must ensure scene independence.
 
-The paper does not specify a complete split protocol. This repository's independent validation and held-out testing are an explicit evaluation protocol rather than a claim about how the published tables were produced.
+Split protocols and preprocessing settings should be recorded for each experiment.
 
-Example local layout (data are ignored by Git):
+Recommended directory layout (data are ignored by Git):
 
 ```text
 data/

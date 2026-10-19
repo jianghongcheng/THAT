@@ -1,24 +1,24 @@
 # Figure gallery
 
-These images are rendered from the supplied figure PDFs for [THAT, IEEE SMC 2025](https://doi.org/10.1109/SMC58881.2025.11343459). Figure content and embedded annotations are retained. Experimental figures represent the paper's results, not a newly reproduced benchmark of this repository. The source mapping and checksums are available in [`assets/figures/sources.json`](../assets/figures/sources.json).
+Figures from [THAT, IEEE SMC 2025](https://doi.org/10.1109/SMC58881.2025.11343459). Source files and checksums are recorded in [`assets/figures/sources.json`](../assets/figures/sources.json).
 
 ## Network architecture
 
 ![Overall THAT architecture](../assets/figures/architecture.png)
 
-Source: `PTST.pdf`. The paper diagram includes shallow fusion, PTSG stages, and reconstruction. Differences and ambiguous details resolved by this implementation are documented in [reproducibility notes](reproducibility.md).
+Source: `PTST.pdf`. The paper diagram includes shallow fusion, PTSG stages, and reconstruction. See [implementation notes](reproducibility.md) for model configuration.
 
 ## Pivotal relations and adaptive features
 
 ![Paper illustration of pivotal relations and adaptive features](../assets/figures/feature-visualization.png)
 
-Source: `comparison.pdf`. Conceptual feature illustration from the paper; not an activation map computed from the current checkpoint.
+Source: `comparison.pdf`. Pivotal relations and adaptive feature extraction.
 
 ## Token selection
 
 ![Query, relevant, and irrelevant token illustration](../assets/figures/token-selection.png)
 
-Source: `example.pdf`. Paper illustration of token selection. It should not be interpreted as proof of the spatial-token layout of this implementation; the implemented attention uses channel-feature tokens.
+Source: `example.pdf`. Query, relevant, and irrelevant token examples.
 
 ## MVFN
 
@@ -32,7 +32,7 @@ Source: `MVFN.pdf`. Three depthwise-convolution paths combine direct, local-vari
 
 ![Paper Botswana times-two reconstruction comparison](../assets/figures/botswana-x2-comparison.png)
 
-Source: `result.pdf`. Reconstruction views and enlarged regions for the compared methods, THAT (“Ours”), and ground truth. The dB labels belong to the supplied visualization; no new image-level or aggregate scores have been inferred from them.
+Source: `result.pdf`. Reconstruction views and enlarged regions for the compared methods, THAT (“Ours”), and ground truth. The dB labels are the values shown in the paper figure.
 
 ## Botswana ×2: band-wise PSNR
 

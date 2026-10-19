@@ -1,4 +1,4 @@
-"""Generate Wald-style reduced-resolution pairs; require unspecified physics as input."""
+"""Prepare reduced-resolution hyperspectral pairs using Wald-style degradation."""
 
 import argparse
 import hashlib
@@ -72,7 +72,7 @@ def main():
         "--sigma",
         type=float,
         required=True,
-        help="Gaussian sigma: paper does not specify",
+        help="Standard deviation of the Gaussian degradation kernel",
     )
     p.add_argument("--phase", type=int, default=0)
     p.add_argument("--crop-size", type=int, default=256)

@@ -22,7 +22,7 @@ def main():
         "--num-groups",
         type=int,
         default=3,
-        help="N unspecified by paper: explicit configurable choice",
+        help="Number of Pivotal Token Selective Groups",
     )
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
@@ -80,7 +80,7 @@ def main():
             scheduler=scheduler.state_dict(),
             epoch=epoch + 1,
             development_scene_ids=development_scene_ids,
-            format_version="that-paper-alignment-20261019",
+            format_version="that-v1",
             training_config={
                 k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()
             },
